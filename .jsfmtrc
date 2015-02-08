@@ -1,0 +1,8 @@
+{
+  "preset": "default",
+  "whiteSpace": {
+    "after": {
+      "FunctionReservedWord": 1
+    }
+  }
+}
