@@ -4,10 +4,10 @@
   "description": "A React FontAwesome component.",
   "repository": {
     "type": "git",
-    "url": "danawoodman/react-fontawesome"
+    "url": "builtbybig/react-fontawesome"
   },
   "bugs": {
-    "url": "https://github.com/danawoodman/react-fontawesome/issues"
+    "url": "https://github.com/builtbybig/react-fontawesome/issues"
   },
   "main": "index.js",
   "scripts": {
