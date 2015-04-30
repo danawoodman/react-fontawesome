@@ -23,12 +23,13 @@ var MyComponent = React.createClass({
       <FontAwesome
         name="rocket"
         spin
-        size="lg"
+        size="3x"
         className="super-crazy-colors" />
     );
   }
 });
 ```
+* Valid sizes are: 1x, 2x, 3x, 4x & 5x
 
 
 ## Contributing
