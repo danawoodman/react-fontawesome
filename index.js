@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react'
 
-var FontAwesome = React.createClass({
+export default React.createClass({
 
   propTypes: {
     name: React.PropTypes.string.isRequired,
@@ -12,54 +12,52 @@ var FontAwesome = React.createClass({
     inverse: React.PropTypes.bool,
     flip: React.PropTypes.oneOf(['horizontal', 'vertical']),
     rotate: React.PropTypes.oneOf(['90', '180', '270']),
-    stack: React.PropTypes.oneOf(['1x', '2x']),
+    stack: React.PropTypes.oneOf(['1x', '2x'])
   },
 
-  render: function () {
-    var className =  'fa fa-' + this.props.name;
+  render() {
+    var className =  `fa fa-${this.props.name}`
 
     if (this.props.size) {
-      className += ' fa-' + this.props.size;
+      className += ` fa-${this.props.size}`
     }
 
     if (this.props.spin) {
-      className += ' fa-spin';
+      className += ' fa-spin'
     }
 
     if (this.props.pulse) {
-      className += ' fa-pulse';
+      className += ' fa-pulse'
     }
 
     if (this.props.border) {
-      className += ' fa-border';
+      className += ' fa-border'
     }
 
     if (this.props.fixedWidth) {
-      className += ' fa-fw';
+      className += ' fa-fw'
     }
 
     if (this.props.inverse) {
-      className += ' fa-inverse';
+      className += ' fa-inverse'
     }
 
     if (this.props.flip) {
-      className += ' fa-flip-' + this.props.flip;
+      className += ` fa-flip-${this.props.flip}`
     }
 
     if (this.props.rotate) {
-      className += ' fa-rotate-' + this.props.rotate;
+      className += ` fa-rotate-${this.props.rotate}`
     }
 
     if (this.props.stack) {
-      className += ' fa-stack-' + this.props.stack;
+      className += ` fa-stack-${this.props.stack}`
     }
 
     if (this.props.className) {
-      className += ' ' + this.props.className;
+      className += ` ${this.props.className}`
     }
 
-    return React.createElement('span', { className: className });
+    return <span {...this.props} className={className} />
   }
-});
-
-module.exports = FontAwesome;
+})

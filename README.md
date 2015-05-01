@@ -3,14 +3,6 @@
 A React component for the font-awesome icon library.
 
 
-## Features
-
-- No external dependencies on build tools.
-- Not necessary to support ES6 in your application.
-- Packaged for NPM as well as without.
-- Remove the `fa-` prefix from all settings.
-
-
 ## Usage
 
 ```
@@ -24,7 +16,9 @@ var MyComponent = React.createClass({
         name="rocket"
         spin
         size="lg"
-        className="super-crazy-colors" />
+        className="super-crazy-colors"
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      />
     );
   }
 });

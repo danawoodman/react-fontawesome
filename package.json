@@ -1,21 +1,21 @@
 {
   "name": "react-fontawesome",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A React FontAwesome component.",
   "repository": {
     "type": "git",
-    "url": "builtbybig/react-fontawesome"
+    "url": "https://github.com/builtbybig/react-fontawesome"
   },
   "bugs": {
     "url": "https://github.com/builtbybig/react-fontawesome/issues"
   },
   "main": "index.js",
   "scripts": {
-    "dist": "./node_modules/webpack/bin/webpack.js --colors --progress",
-    "watch:dist": "./node_modules/webpack/bin/webpack.js --colors --porgress --watch",
-    "watch:test": "./node_modules/mocha/bin/mocha -w",
-    "watch": "./node_modules/parallelshell/index.js 'npm run watch:test' 'npm run watch:dist'",
-    "test": "./node_modules/mocha/bin/mocha"
+    "dist": "webpack --colors --progress",
+    "watch:dist": "webpack --colors --porgress --watch",
+    "watch:test": "mocha -w",
+    "watch": "parallelshell 'npm run watch:test' 'npm run watch:dist'",
+    "test": "mocha"
   },
   "keywords": [
     "react",
@@ -39,17 +39,22 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.1.13",
+    "babel-core": "^5.1.13",
+    "babel-loader": "^5.0.0",
     "jsdom": "^3.1.0",
     "mocha": "^2.1.0",
     "mocha-jsdom": "^0.2.0",
     "parallelshell": "^1.0.4",
+    "react": "^0.13.2",
     "should": "^4.6.5",
     "webpack": "^1.5.3"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "dependencies": {
-    "react": "^0.12.2"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "0.13.x"
   }
 }

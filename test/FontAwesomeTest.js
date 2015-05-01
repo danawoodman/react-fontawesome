@@ -5,7 +5,7 @@ var FontAwesome = require('../index');
 var FontAwesomeFactory = React.createFactory(FontAwesome);
 
 describe('FontAwesome', function () {
-  var element, classes;
+  var classes;
 
   // Use mocha-jsdom.
   jsdom();
