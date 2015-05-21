@@ -1,3 +1,4 @@
+var _ = require('lodash')
 var React = require('react')
 
 module.exports = React.createClass({
@@ -58,9 +59,6 @@ module.exports = React.createClass({
       className += ' ' + this.props.className
     }
 
-    var props = this.props;
-    props.className = className;
-
-    return React.createElement('span', props)
+    return React.createElement('span', _.assign({}, this.props, { className: className }))
   }
 })
