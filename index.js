@@ -4,16 +4,16 @@ var React = require('react')
 module.exports = React.createClass({
 
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    size: React.PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x']),
-    spin: React.PropTypes.bool,
-    pulse: React.PropTypes.bool,
     border: React.PropTypes.bool,
     fixedWidth: React.PropTypes.bool,
-    inverse: React.PropTypes.bool,
     flip: React.PropTypes.oneOf(['horizontal', 'vertical']),
+    inverse: React.PropTypes.bool,
+    name: React.PropTypes.string.isRequired,
+    pulse: React.PropTypes.bool,
     rotate: React.PropTypes.oneOf(['90', '180', '270']),
-    stack: React.PropTypes.oneOf(['1x', '2x'])
+    size: React.PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x']),
+    spin: React.PropTypes.bool,
+    stack: React.PropTypes.oneOf(['1x', '2x']),
   },
 
   render: function () {
