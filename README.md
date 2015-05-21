@@ -3,19 +3,7 @@
 A React component for the font-awesome icon library.
 
 - Simple API that mirrors Font Awesome's classes.
-- Supports all Font Awesome modifiers:
-
-  - `border` - boolean
-  - `fixedWidth` - boolean
-  - `flip` - `'horizontal'` | `'vertical'`
-  - `inverse` - boolean
-  - `name` - `'check'`, `'cloud'`, `'person'`, etc... (e.g. any Font Awesome icon class name, minus the `fa-` prefix)
-  - `pulse` - boolean
-  - `rotate` - `'90'` | `'180'` | `'270'`
-  - `size` - `'1x'` | `'2x'` | `'3x'` | `'4x'` | `'5x'`
-  - `spin` - boolean
-  - `stack` - `'1x'` | `'2x'`
-
+- Supports all Font Awesome modifiers (see [API](#API) below).
 - Add your own `className`s, styles and other props (all additional props are passed directly to the component).
 - Standard, non-ES6 JavaScript, so should work most places without a build step.
     - Packaged as a CommonJS/npm module.
@@ -45,6 +33,21 @@ var MyComponent = React.createClass({
 ```
 
 This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to the CDN versions.
+
+### API
+
+| Prop Name     | Type        | Default | Description |
+|---------------|-------------|---------|-------------|
+| `border`      | `boolean`   | `false` |             |
+| `fixedWidth`  | `boolean`   | `false` |             |
+| `flip`        | `string`    | `''`    | Choices: `'horizontal'` or `'vertical'` |
+| `inverse`     | `boolean`   | `false` |             |
+| `name`        | `string`    | `''`    | **Required:** `'check'`, `'cloud'`, `'person'`, etc... (e.g. any Font Awesome icon class name, minus the `fa-` prefix) |
+| `pulse`       | `boolean`   | `false` |             |
+| `rotate`      | `string`    | `''`    | Choices: `'90'`, `'180'` or `'270'` |
+| `size`        | `string`    | `''`    | Choices: `'1x'`, `'2x'`, `'3x'`, `'4x'` or `'5x'` |
+| `spin`        | `boolean`   | `false` |             |
+| `stack`       | `string`    | `''`    | Choices: `'1x'` or `'2x'` |
 
 
 ## Contributing
