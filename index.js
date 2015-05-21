@@ -1,10 +1,10 @@
-import React from 'react'
+var React = require('react')
 
-export default React.createClass({
+module.exports = React.createClass({
 
   propTypes: {
     name: React.PropTypes.string.isRequired,
-    size: React.PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
+    size: React.PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x']),
     spin: React.PropTypes.bool,
     pulse: React.PropTypes.bool,
     border: React.PropTypes.bool,
@@ -15,11 +15,11 @@ export default React.createClass({
     stack: React.PropTypes.oneOf(['1x', '2x'])
   },
 
-  render() {
-    var className =  `fa fa-${this.props.name}`
+  render: function () {
+    var className = 'fa fa-' + this.props.name
 
     if (this.props.size) {
-      className += ` fa-${this.props.size}`
+      className += ' fa-' + this.props.size
     }
 
     if (this.props.spin) {
@@ -43,21 +43,24 @@ export default React.createClass({
     }
 
     if (this.props.flip) {
-      className += ` fa-flip-${this.props.flip}`
+      className += ' fa-flip-' + this.props.flip
     }
 
     if (this.props.rotate) {
-      className += ` fa-rotate-${this.props.rotate}`
+      className += ' fa-rotate-' + this.props.rotate
     }
 
     if (this.props.stack) {
-      className += ` fa-stack-${this.props.stack}`
+      className += ' fa-stack-' + this.props.stack
     }
 
     if (this.props.className) {
-      className += ` ${this.props.className}`
+      className += ' ' + this.props.className
     }
 
-    return <span {...this.props} className={className} />
+    var props = this.props;
+    props.className = className;
+
+    return React.createElement('span', props)
   }
 })
