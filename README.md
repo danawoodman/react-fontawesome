@@ -4,20 +4,23 @@ A React component for the font-awesome icon library.
 
 - Simple API that mirrors Font Awesome's classes.
 - Supports all Font Awesome modifiers:
-  - `name` - `'check'`, `'cloud'`, `'person'`, etc... (e.g. any Font Awesome icon class name, minus the `fa-` prefix)
-  - `spin` - boolean
-  - `size` - `'1x'` | `'2x'` | `'3x'` | `'4x'` | `'5x'`
-  - `pulse` - boolean
+
   - `border` - boolean
   - `fixedWidth` - boolean
-  - `inverse` - boolean
   - `flip` - `'horizontal'` | `'vertical'`
+  - `inverse` - boolean
+  - `name` - `'check'`, `'cloud'`, `'person'`, etc... (e.g. any Font Awesome icon class name, minus the `fa-` prefix)
+  - `pulse` - boolean
   - `rotate` - `'90'` | `'180'` | `'270'`
+  - `size` - `'1x'` | `'2x'` | `'3x'` | `'4x'` | `'5x'`
+  - `spin` - boolean
   - `stack` - `'1x'` | `'2x'`
+
 - Add your own `className`s, styles and other props (all additional props are passed directly to the component).
-- Packaged as a CommonJS/npm module.
-- Standard, non-ES6 JavaScript, so should work most places.
-- Does not require a specific build process/tool other than something that supports npm.
+- Standard, non-ES6 JavaScript, so should work most places without a build step.
+    - Packaged as a CommonJS/npm module.
+    - Doesn't use JSX so no transforms needed.
+    - Does not require a specific build process/tool other than something that supports npm.
 
 
 ## Usage
@@ -30,9 +33,9 @@ var MyComponent = React.createClass({
   render: function () {
     return (
       <FontAwesome
-        className="super-crazy-colors"
-        name="rocket"
-        size="2x"
+        className='super-crazy-colors'
+        name='rocket'
+        size='2x'
         spin
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
       />
