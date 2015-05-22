@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.5
+
+- Allow React to be 0.12 or greater, actually fixing #2.
+
+## v0.2.4
+
+- Relax React dependency which closes #2.
+
 ## v0.2.3
 
 - Revert back to using `lg` instead of `1x` for size.
