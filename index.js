@@ -11,7 +11,7 @@ module.exports = React.createClass({
     name: React.PropTypes.string.isRequired,
     pulse: React.PropTypes.bool,
     rotate: React.PropTypes.oneOf(['90', '180', '270']),
-    size: React.PropTypes.oneOf(['1x', '2x', '3x', '4x', '5x']),
+    size: React.PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
     spin: React.PropTypes.bool,
     stack: React.PropTypes.oneOf(['1x', '2x']),
   },

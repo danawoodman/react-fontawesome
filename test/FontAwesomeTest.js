@@ -35,6 +35,7 @@ describe('FontAwesome', function () {
   it('the proper class names get set', function () {
     var expectedClasses = [
       'fa',
+      'fa-lg',
       'fa-rocket',
       'fa-spin',
       'fa-pulse',
