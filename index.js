@@ -3,6 +3,8 @@ var React = require('react')
 
 module.exports = React.createClass({
 
+  displayName: 'FontAwesome',
+
   propTypes: {
     border: React.PropTypes.bool,
     fixedWidth: React.PropTypes.bool,
