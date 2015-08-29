@@ -29,6 +29,15 @@ npm install --save react-fontawesome
 var React = require('react');
 var FontAwesome = require('react-fontawesome');
 
+React.render(<FontAwesome name='person' />, document.body);
+```
+
+Advanced usage:
+
+```js
+var React = require('react');
+var FontAwesome = require('react-fontawesome');
+
 var MyComponent = React.createClass({
   render: function () {
     return (
