@@ -4,16 +4,16 @@ import React from 'react'
  * A React component for the font-awesome icon library.
  *
  *
- * @param {?Boolean} border Whether or not to show a border radius
+ * @param {?Boolean} [border=false] Whether or not to show a border radius
  * @param {?String} className An extra set of CSS classes to add to the component
- * @param {?Boolean} fixedWidth Make buttons fixed width
- * @param {?String} flip Flip the icon's orientation.
- * @param {?Boolean} inverse Inverse the icon's color
+ * @param {?Boolean} [fixedWidth=false] Make buttons fixed width
+ * @param {?String} [flip=false] Flip the icon's orientation.
+ * @param {?Boolean} [inverse=false]Inverse the icon's color
  * @param {String} name Name of the icon to use
- * @param {?Boolean} pulse Rotate icon with 8 steps (rather than smoothly)
+ * @param {?Boolean} [pulse=false] Rotate icon with 8 steps (rather than smoothly)
  * @param {?Number} rotate The degress to rotate the icon by
  * @param {?String} size The icon scaling size
- * @param {?Boolean} spin Spin the icon
+ * @param {?Boolean} [spin=false] Spin the icon
  * @param {?String} stack Stack an icon on top of another
  * @module FontAwesome
  * @type {ReactClass}
