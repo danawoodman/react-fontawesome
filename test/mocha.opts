@@ -1,4 +1,4 @@
+--require ./test/helper.js
 --compilers js:babel/register
---require should
 --reporter list
 --ui bdd

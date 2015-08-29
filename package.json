@@ -1,21 +1,29 @@
 {
   "name": "react-fontawesome",
   "version": "0.2.5",
-  "description": "A React FontAwesome component.",
+  "description": "A React component for the font-awesome icon library.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/builtbybig/react-fontawesome"
+    "url": "git+https://github.com/danawoodman/react-fontawesome.git"
+  },
+  "config": {
+    "entry": "src/index.js"
   },
   "bugs": {
-    "url": "https://github.com/builtbybig/react-fontawesome/issues"
+    "url": "https://github.com/danawoodman/react-fontawesome/issues"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "dist": "webpack --colors --progress",
-    "watch:dist": "webpack --colors --porgress --watch",
-    "watch:test": "mocha -w",
-    "watch": "parallelshell 'npm run watch:test' 'npm run watch:dist'",
-    "test": "mocha"
+    "build": "babel -o $npm_package_main $npm_package_config_entry",
+    "dist": "npm run lint && npm run build && npm test && npm run docs",
+    "docs": "jsdoc2md $npm_package_config_entry > api.md",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "preversion": "npm run dist",
+    "test": "mocha",
+    "watch": "npm run watch-build & npm run watch-test",
+    "watch-build": "npm run build -- --watch",
+    "watch-test": "npm run test -- -w"
   },
   "keywords": [
     "react",
@@ -39,23 +47,24 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.1.13",
-    "babel-core": "^5.1.13",
-    "babel-loader": "^5.0.0",
-    "jsdom": "^3.1.0",
-    "mocha": "^2.1.0",
-    "mocha-jsdom": "^0.2.0",
-    "parallelshell": "^1.0.4",
-    "react": "^0.13.2",
-    "should": "^4.6.5",
-    "webpack": "^1.5.3"
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
+    "eslint": "^1.2.1",
+    "eslint-plugin-nodeca": "^1.0.3",
+    "eslint-plugin-react": "^3.3.0",
+    "jsdoc-to-markdown": "^1.1.1",
+    "jsdom": "^6.2.0",
+    "mocha": "^2.2.5",
+    "mocha-jsdom": "^1.0.0",
+    "mocha-sinon": "^1.1.4",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0"
   },
+  "homepage": "https://github.com/danawoodman/react-fontawesome#readme",
   "engines": {
     "node": ">=0.10.0"
   },
-  "dependencies": {
-    "lodash": "^3.9.1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=0.12.0"
   }

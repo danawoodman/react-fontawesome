@@ -1,6 +1,11 @@
 # react-fontawesome
 
-A React component for the font-awesome icon library.
+[![Travis CI build status](https://img.shields.io/travis/danawoodman/react-fontawesome.svg)](https://travis-ci.org/danawoodman/react-fontawesome)
+[![Dependency Status](https://img.shields.io/david/danawoodman/react-fontawesome.svg)](https://david-dm.org/danawoodman/react-fontawesome)
+[![View on npm](https://img.shields.io/npm/dm/react-fontawesome.svg)](https://www.npmjs.com/package/react-fontawesome)
+[![View on npm](https://img.shields.io/npm/v/react-fontawesome.svg)](https://www.npmjs.com/package/react-fontawesome)
+
+> A React component for the font-awesome icon library.
 
 - Simple API that mirrors Font Awesome's classes.
 - Supports all Font Awesome modifiers (see [API](#API) below).
@@ -9,6 +14,13 @@ A React component for the font-awesome icon library.
     - Packaged as a CommonJS/npm module.
     - Doesn't use JSX so no transforms needed.
     - Does not require a specific build process/tool other than something that supports npm.
+
+
+## Install
+
+```
+npm install --save react-fontawesome
+```
 
 
 ## Usage
@@ -34,7 +46,8 @@ var MyComponent = React.createClass({
 
 This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to the CDN versions.
 
-### API
+
+## API
 
 | Prop Name     | Type        | Default | Description |
 |---------------|-------------|---------|-------------|
@@ -49,21 +62,21 @@ This component does not include any of the Font Awesome CSS or fonts, so you'll 
 | `spin`        | `boolean`   | `false` |             |
 | `stack`       | `string`    | `''`    | Choices: `'1x'` or `'2x'` |
 
+See [the API docs](api.md) for full documentation.
+
 
 ## Contributing
 
 Pull requests welcome! 
 
-Please use the `.editorconfig`, `.jsfmtrc` and `.jshintrc` configurations in your editor to ensure proper formatting.
+Please use the `.editorconfig`, `.eslintrc` configurations in your editor to ensure proper formatting.
 
 Run the test suite with `npm test`, make sure tests are passing and that you write tests for new features.
 
 
-## Credits
-
-Created by [Dana Woodman](http://danawoodman.com) of [BIG](http://builtbybig.com). Inspired by [react-fa](https://github.com/andreypopp/react-fa).
-
-
 ## License
 
-Licensed under the generous MIT license.
+[MIT](license) &copy; [Dana Woodman][author]
+
+
+[author]: https://github.com/danawoodman

@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.0
+
+- Refactor to use new application structure
+- Use eslint
+- src folder for ES6/7 code ran through babel to lib
+- More helpful scripts
+- Simpler test
+- Less dependencies
+- Remove webpack
+- Add api docs
+- Updated readme
+
 ## v0.2.5
 
 - Allow React to be 0.12 or greater, actually fixing #2.
