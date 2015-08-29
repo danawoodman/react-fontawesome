@@ -16,7 +16,7 @@ import React from 'react'
  * @param {?Boolean} spin Spin the icon
  * @param {?String} stack Stack an icon on top of another
  * @module FontAwesome
- * @class
+ * @type {ReactClass}
  */
 export default React.createClass({
 

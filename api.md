@@ -1,8 +1,5 @@
-<a name="FontAwesome"></a>
-## FontAwesome
-**Kind**: global class  
-<a name="new_FontAwesome_new"></a>
-### new FontAwesome(border, className, fixedWidth, flip, inverse, name, pulse, rotate, size, spin, stack)
+<a name="module_FontAwesome"></a>
+## FontAwesome : <code>ReactClass</code>
 A React component for the font-awesome icon library.
 
 
