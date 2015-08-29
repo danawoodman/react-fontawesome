@@ -49,19 +49,6 @@ This component does not include any of the Font Awesome CSS or fonts, so you'll 
 
 ## API
 
-| Prop Name     | Type        | Default | Description |
-|---------------|-------------|---------|-------------|
-| `border`      | `boolean`   | `false` |             |
-| `fixedWidth`  | `boolean`   | `false` |             |
-| `flip`        | `string`    | `''`    | Choices: `'horizontal'` or `'vertical'` |
-| `inverse`     | `boolean`   | `false` |             |
-| `name`        | `string`    | `''`    | **Required:** `'check'`, `'cloud'`, `'person'`, etc... (e.g. any Font Awesome icon class name, minus the `fa-` prefix) |
-| `pulse`       | `boolean`   | `false` |             |
-| `rotate`      | `string`    | `''`    | Choices: `'90'`, `'180'` or `'270'` |
-| `size`        | `string`    | `''`    | Choices: `'lg'`, `'2x'`, `'3x'`, `'4x'` or `'5x'` |
-| `spin`        | `boolean`   | `false` |             |
-| `stack`       | `string`    | `''`    | Choices: `'1x'` or `'2x'` |
-
 See [the API docs](api.md) for full documentation.
 
 
