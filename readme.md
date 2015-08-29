@@ -25,6 +25,8 @@ npm install --save react-fontawesome
 
 ## Usage
 
+Basic usage:
+
 ```js
 var React = require('react');
 var FontAwesome = require('react-fontawesome');
