@@ -7,14 +7,6 @@
 
 > A React component for the font-awesome icon library.
 
-- Simple API that mirrors Font Awesome's classes.
-- Supports all Font Awesome modifiers (see [API](#API) below).
-- Add your own `className`s, styles and other props (all additional props are passed directly to the component).
-- Standard, non-ES6 JavaScript, so should work most places without a build step.
-    - Packaged as a CommonJS/npm module.
-    - Doesn't use JSX so no transforms needed.
-    - Does not require a specific build process/tool other than something that supports npm.
-
 
 ## Install
 
@@ -25,16 +17,25 @@ npm install --save react-fontawesome
 
 ## Usage
 
-Basic usage:
-
 ```js
 var React = require('react');
 var FontAwesome = require('react-fontawesome');
 
-React.render(<FontAwesome name='person' />, document.body);
+React.render(<FontAwesome name='rocket' />, document.body);
 ```
 
-Advanced usage:
+
+## Features
+
+- No dependencies (other than React)
+- Simple API that mirrors Font Awesome's class names.
+- Supports all Font Awesome modifiers (see [API](#API) below).
+- Add your own `className`s, styles and other props (all additional props are passed directly to the component).
+
+*Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to CDN versions.*
+
+
+## Examples
 
 ```js
 var React = require('react');
@@ -55,8 +56,6 @@ var MyComponent = React.createClass({
 });
 ```
 
-This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to the CDN versions.
-
 
 ## API
 
@@ -69,7 +68,7 @@ Pull requests welcome!
 
 Please use the `.editorconfig`, `.eslintrc` configurations in your editor to ensure proper formatting.
 
-Run the test suite with `npm test`, make sure tests are passing and that you write tests for new features.
+Run the test suite with `npm test` and linting with `npm run lint`. Make sure tests are passing and that you write tests for new features and document changes to the API with updates to the JSDocs.
 
 
 ## License
