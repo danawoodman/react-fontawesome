@@ -4,5 +4,6 @@ test
 .eslintrc
 .nvmrc
 .travis.yml
-*.md
+api.md
+changelog.md
 license
