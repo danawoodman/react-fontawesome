@@ -9,7 +9,7 @@
   "config": {
     "entry": "src",
     "output": "lib",
-    "main": "src/index.js"
+    "mainFile": "src/index.js"
   },
   "bugs": {
     "url": "https://github.com/danawoodman/react-fontawesome/issues"
@@ -18,7 +18,7 @@
   "scripts": {
     "build": "babel $npm_package_config_entry -o $npm_package_config_output",
     "dist": "npm run lint && npm run build && npm test && npm run docs",
-    "docs": "jsdoc2md $npm_package_config_main > api.md",
+    "docs": "jsdoc2md $npm_package_config_mainFile > api.md",
     "lint": "eslint .",
     "prepublish": "npm run dist",
     "test": "mocha",
