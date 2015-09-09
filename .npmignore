@@ -5,5 +5,3 @@ test
 .nvmrc
 .travis.yml
 api.md
-changelog.md
-license
