@@ -1,1 +1,7 @@
-/src/
+src
+test
+.editorconfig
+.eslintrc
+.nvmrc
+.travis.yml
+api.md

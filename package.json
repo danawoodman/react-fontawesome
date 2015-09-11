@@ -7,16 +7,18 @@
     "url": "git+https://github.com/danawoodman/react-fontawesome.git"
   },
   "config": {
-    "entry": "src/index.js"
+    "entry": "src",
+    "output": "lib",
+    "mainFile": "src/index.js"
   },
   "bugs": {
     "url": "https://github.com/danawoodman/react-fontawesome/issues"
   },
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel -o $npm_package_main $npm_package_config_entry",
+    "build": "babel $npm_package_config_entry --out-dir $npm_package_config_output",
     "dist": "npm run lint && npm run build && npm test && npm run docs",
-    "docs": "jsdoc2md $npm_package_config_entry > api.md",
+    "docs": "jsdoc2md $npm_package_config_mainFile > api.md",
     "lint": "eslint .",
     "prepublish": "npm run dist",
     "test": "mocha",
