@@ -2,6 +2,8 @@ src
 test
 .editorconfig
 .eslintrc
+.eslintignore
 .nvmrc
 .travis.yml
+.yo-rc.json
 api.md
