@@ -8,6 +8,7 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
       "globalReturn": true,
       "jsx": true
     },
