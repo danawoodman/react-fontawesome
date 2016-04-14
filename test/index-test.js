@@ -1,6 +1,7 @@
 /* eslint no-unused-expressions:0 */
 
 import React from 'react'
+import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
 import FontAwesome from '../src'
 
@@ -24,8 +25,8 @@ describe('FontAwesome', () => {
       rotate: 180,
       stack: '1x',
     }
-    const component = React.render(<FontAwesome {...props} />, document.body)
-    classes = component.getDOMNode().className.split(' ')
+    const component = ReactDOM.render(<FontAwesome {...props} />, document.body)
+    classes = ReactDOM.findDOMNode(component).className.split(' ')
   })
 
   it('the proper class names get set', () => {
