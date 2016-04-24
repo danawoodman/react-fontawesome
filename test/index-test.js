@@ -10,7 +10,7 @@ describe('FontAwesome', () => {
   let classes
 
   // Use mocha-jsdom.
-  jsdom()
+  jsdom({ html: '<div id="root"></div>' })
 
   beforeEach(() => {
     const props = {
@@ -26,7 +26,7 @@ describe('FontAwesome', () => {
       rotate: 180,
       stack: '1x',
     }
-    component = ReactDOM.render(<FontAwesome {...props} />, document.body)
+    component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
     classes = ReactDOM.findDOMNode(component).className.split(' ')
   })
 
