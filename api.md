@@ -1,4 +1,5 @@
 <a name="module_FontAwesome"></a>
+
 ## FontAwesome : <code>ReactClass</code>
 A React component for the font-awesome icon library.
 
