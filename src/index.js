@@ -37,42 +37,56 @@ export default React.createClass({
   },
 
   render() {
-    let className = 'fa fa-' + this.props.name
+    let {
+      border,
+      fixedWidth,
+      flip,
+      inverse,
+      name,
+      pulse,
+      rotate,
+      size,
+      spin,
+      stack,
+      ...props,
+    } = this.props
 
-    if (this.props.size) {
-      className += ' fa-' + this.props.size
+    let className = 'fa fa-' + name
+
+    if (size) {
+      className += ' fa-' + size
     }
 
-    if (this.props.spin) {
+    if (spin) {
       className += ' fa-spin'
     }
 
-    if (this.props.pulse) {
+    if (pulse) {
       className += ' fa-pulse'
     }
 
-    if (this.props.border) {
+    if (border) {
       className += ' fa-border'
     }
 
-    if (this.props.fixedWidth) {
+    if (fixedWidth) {
       className += ' fa-fw'
     }
 
-    if (this.props.inverse) {
+    if (inverse) {
       className += ' fa-inverse'
     }
 
-    if (this.props.flip) {
-      className += ' fa-flip-' + this.props.flip
+    if (flip) {
+      className += ' fa-flip-' + flip
     }
 
-    if (this.props.rotate) {
-      className += ' fa-rotate-' + this.props.rotate
+    if (rotate) {
+      className += ' fa-rotate-' + rotate
     }
 
-    if (this.props.stack) {
-      className += ' fa-stack-' + this.props.stack
+    if (stack) {
+      className += ' fa-stack-' + stack
     }
 
     if (this.props.className) {
@@ -81,7 +95,7 @@ export default React.createClass({
 
     return (
       <span
-        {...this.props}
+        {...props}
         className={className}
       />
     )
