@@ -20,7 +20,6 @@
     "dist": "npm run lint && npm run build && npm test && npm run docs",
     "docs": "jsdoc2md $npm_package_config_mainFile > api.md",
     "lint": "eslint .",
-    "prepublish": "npm run dist",
     "test": "mocha",
     "watch": "npm run watch-build & npm run watch-test",
     "watch-build": "npm run build -- --watch",
