@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.1.0
+
+- Remove `prepublish` step so builds work on Windows
+
+## v1.0.0
+
+We are production ready! 😬🤘🎉
+
+- Upgrade development node version
+- [Tests] Use the modern ReactDOM.render+findDOMNode APIs for React 15 (#10, thanks @ide!)
+- Filter which props are passed into the underlying span (#8, thanks @ide!)
+- Upgrade ESLint to v2 (#7, thanks @ide!)
+- Upgrade to Babel 6 (#6, thanks @ide!)
+
 ## v0.3.0
 
 - Refactor to use new application structure
