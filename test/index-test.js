@@ -14,6 +14,7 @@ describe('FontAwesome', () => {
 
   beforeEach(() => {
     const props = {
+      component: 'li',
       border: true,
       className: 'my-custom-class',
       fixedWidth: true,
@@ -52,5 +53,9 @@ describe('FontAwesome', () => {
 
   it('the "name" prop is not rendered in the markup', () => {
     expect(ReactDOM.findDOMNode(component).name).to.be.undefined
+  })
+
+  it('uses component prop as containing component if specified', () => {
+    expect(ReactDOM.findDOMNode(component).tagName).to.equal('LI')
   })
 })
