@@ -8,6 +8,7 @@ A React component for the font-awesome icon library.
 | --- | --- | --- | --- |
 | [border] | <code>Boolean</code> | <code>false</code> | Whether or not to show a border radius |
 | [className] | <code>String</code> |  | An extra set of CSS classes to add to the component |
+| [component] | <code>String</code> | <code>span</code> | Type of containing component |
 | [fixedWidth] | <code>Boolean</code> | <code>false</code> | Make buttons fixed width |
 | [flip] | <code>String</code> | <code>false</code> | Flip the icon's orientation. |
 | [inverse] | <code>Boolean</code> | <code>false</code> | the icon's color |
@@ -17,4 +18,3 @@ A React component for the font-awesome icon library.
 | [size] | <code>String</code> |  | The icon scaling size |
 | [spin] | <code>Boolean</code> | <code>false</code> | Spin the icon |
 | [stack] | <code>String</code> |  | Stack an icon on top of another |
-
