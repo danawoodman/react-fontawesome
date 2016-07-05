@@ -3,9 +3,9 @@ import React from 'react'
 /**
  * A React component for the font-awesome icon library.
  *
- *
  * @param {Boolean} [border=false] Whether or not to show a border radius
  * @param {String} [className] An extra set of CSS classes to add to the component
+ * @param {String} [component=span] Type of containing component
  * @param {Boolean} [fixedWidth=false] Make buttons fixed width
  * @param {String} [flip=false] Flip the icon's orientation.
  * @param {Boolean} [inverse=false]Inverse the icon's color
@@ -25,6 +25,7 @@ export default React.createClass({
   propTypes: {
     border: React.PropTypes.bool,
     className: React.PropTypes.string,
+    component: React.PropTypes.oneOf([ 'span', 'li' ]),
     fixedWidth: React.PropTypes.bool,
     flip: React.PropTypes.oneOf([ 'horizontal', 'vertical' ]),
     inverse: React.PropTypes.bool,
@@ -36,8 +37,15 @@ export default React.createClass({
     stack: React.PropTypes.oneOf([ '1x', '2x' ]),
   },
 
+  getDefaultProps: function () {
+    return {
+      component: 'span',
+    }
+  },
+
   render() {
     let {
+      component,
       border,
       fixedWidth,
       flip,
@@ -94,7 +102,7 @@ export default React.createClass({
     }
 
     return (
-      <span
+      <this.props.component
         {...props}
         className={className}
       />
