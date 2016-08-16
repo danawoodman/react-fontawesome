@@ -6,6 +6,7 @@ import React from 'react'
  *
  * @param {Boolean} [border=false] Whether or not to show a border radius
  * @param {String} [className] An extra set of CSS classes to add to the component
+ * @param {Object} [cssModule] Option to pass FontAwesome CSS as a module
  * @param {Boolean} [fixedWidth=false] Make buttons fixed width
  * @param {String} [flip=false] Flip the icon's orientation.
  * @param {Boolean} [inverse=false]Inverse the icon's color
@@ -25,6 +26,7 @@ export default React.createClass({
   propTypes: {
     border: React.PropTypes.bool,
     className: React.PropTypes.string,
+    cssModule: React.PropTypes.object,
     fixedWidth: React.PropTypes.bool,
     flip: React.PropTypes.oneOf([ 'horizontal', 'vertical' ]),
     inverse: React.PropTypes.bool,
@@ -39,6 +41,7 @@ export default React.createClass({
   render() {
     let {
       border,
+      cssModule,
       fixedWidth,
       flip,
       inverse,
@@ -51,48 +54,92 @@ export default React.createClass({
       ...props,
     } = this.props
 
-    let className = 'fa fa-' + name
+    let className = ''
+    if (cssModule) {
+      className = `${cssModule.fa} ${cssModule['fa-' + name]}`
 
-    if (size) {
-      className += ' fa-' + size
+      if (size) {
+        className += ` ${cssModule['fa-' + size]}`
+      }
+
+      if (spin) {
+        className += ` ${cssModule['fa-spin']}`
+      }
+
+      if (pulse) {
+        className += ` ${cssModule['fa-pulse']}`
+      }
+
+      if (border) {
+        className += ` ${cssModule['fa-border']}`
+      }
+
+      if (fixedWidth) {
+        className += ` ${cssModule['fa-fw']}`
+      }
+
+      if (inverse) {
+        className += ` ${cssModule['fa-inverse']}`
+      }
+
+      if (flip) {
+        className += ` ${cssModule['fa-flip-' + flip]}`
+      }
+
+      if (rotate) {
+        className += ` ${cssModule['fa-rotate-' + rotate]}`
+      }
+
+      if (stack) {
+        className += ` ${cssModule['fa-stack-' + stack]}`
+      }
+
+      if (this.props.className) {
+        className += ` ${cssModule[this.props.className]}`
+      }
+    } else {
+      className = 'fa fa-' + name
+
+      if (size) {
+        className += ' fa-' + size
+      }
+
+      if (spin) {
+        className += ' fa-spin'
+      }
+
+      if (pulse) {
+        className += ' fa-pulse'
+      }
+
+      if (border) {
+        className += ' fa-border'
+      }
+
+      if (fixedWidth) {
+        className += ' fa-fw'
+      }
+
+      if (inverse) {
+        className += ' fa-inverse'
+      }
+
+      if (flip) {
+        className += ' fa-flip-' + flip
+      }
+
+      if (rotate) {
+        className += ' fa-rotate-' + rotate
+      }
+
+      if (stack) {
+        className += ' fa-stack-' + stack
+      }
+
+      if (this.props.className) {
+        className += ' ' + this.props.className
+      }
     }
-
-    if (spin) {
-      className += ' fa-spin'
-    }
-
-    if (pulse) {
-      className += ' fa-pulse'
-    }
-
-    if (border) {
-      className += ' fa-border'
-    }
-
-    if (fixedWidth) {
-      className += ' fa-fw'
-    }
-
-    if (inverse) {
-      className += ' fa-inverse'
-    }
-
-    if (flip) {
-      className += ' fa-flip-' + flip
-    }
-
-    if (rotate) {
-      className += ' fa-rotate-' + rotate
-    }
-
-    if (stack) {
-      className += ' fa-stack-' + stack
-    }
-
-    if (this.props.className) {
-      className += ' ' + this.props.className
-    }
-
     return (
       <span
         {...props}
