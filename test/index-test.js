@@ -27,7 +27,6 @@ describe('FontAwesome', () => {
       'fa-rotate-180': 'fa-rotate-180_1',
       'fa-spin': 'fa-spin_1',
       'fa-stack-1x': 'fa-stack-1x_1',
-      'my-custom-class': 'my-custom-class_1',
     }
 
     const props = {
@@ -88,7 +87,7 @@ describe('FontAwesome', () => {
       'fa-rotate-180_1',
       'fa-spin_1',
       'fa-stack-1x_1',
-      'my-custom-class_1',
+      'my-custom-class',
     ]
     expectedClasses.forEach(className => {
       expect(cssModuleClasses.indexOf(className)).to.be.above(-1)

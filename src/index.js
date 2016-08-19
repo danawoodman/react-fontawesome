@@ -95,7 +95,7 @@ export default React.createClass({
       }
 
       if (this.props.className) {
-        className += ` ${cssModule[this.props.className]}`
+        className += ' ' + this.props.className
       }
     } else {
       className = 'fa fa-' + name
