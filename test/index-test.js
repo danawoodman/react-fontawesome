@@ -5,31 +5,16 @@ import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
 import FontAwesome from '../src'
 
-describe('FontAwesome', () => {
+describe('react-fontawesome', () => {
   let component
   let classes
-  let cssModuleComponent
-  let cssModuleClasses
+  let props
 
   // Use mocha-jsdom.
   jsdom({ html: '<div id="root"></div>' })
 
   beforeEach(() => {
-    const cssModule = {
-      fa: 'fa_1',
-      'fa-border': 'fa-border_1',
-      'fa-flip-vertical': 'fa-flip-vertical_1',
-      'fa-fw': 'fa-fw_1',
-      'fa-inverse': 'fa-inverse_1',
-      'fa-lg': 'fa-lg_1',
-      'fa-rocket': 'fa-rocket_1',
-      'fa-pulse': 'fa-pulse_1',
-      'fa-rotate-180': 'fa-rotate-180_1',
-      'fa-spin': 'fa-spin_1',
-      'fa-stack-1x': 'fa-stack-1x_1',
-    }
-
-    const props = {
+    props = {
       border: true,
       className: 'my-custom-class',
       fixedWidth: true,
@@ -45,9 +30,6 @@ describe('FontAwesome', () => {
     component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
     classes = ReactDOM.findDOMNode(component).className.split(' ')
 
-    cssModuleComponent = ReactDOM.render(<FontAwesome {...props} cssModule={cssModule} />,
-      document.getElementById('root'))
-    cssModuleClasses = ReactDOM.findDOMNode(cssModuleComponent).className.split(' ')
   })
 
   it('the proper class names get set', () => {
@@ -65,8 +47,8 @@ describe('FontAwesome', () => {
       'fa-stack-1x',
       'my-custom-class',
     ]
-    expectedClasses.forEach(className => {
-      expect(classes.indexOf(className)).to.be.above(-1)
+    expectedClasses.forEach((className) => {
+      expect(classes).to.include(className)
     })
   })
 
@@ -74,28 +56,56 @@ describe('FontAwesome', () => {
     expect(ReactDOM.findDOMNode(component).name).to.be.undefined
   })
 
-  it('correct class names get set using cssModule style', () => {
-    const expectedClasses = [
-      'fa_1',
-      'fa-border_1',
-      'fa-flip-vertical_1',
-      'fa-fw_1',
-      'fa-inverse_1',
-      'fa-lg_1',
-      'fa-rocket_1',
-      'fa-pulse_1',
-      'fa-rotate-180_1',
-      'fa-spin_1',
-      'fa-stack-1x_1',
-      'my-custom-class',
-    ]
-    expectedClasses.forEach(className => {
-      expect(cssModuleClasses.indexOf(className)).to.be.above(-1)
-    })
-  })
+  context('CSS module support', () => {
+    let cssModuleComponent
+    let cssModuleClasses
 
-  it('the "name" prop is not rendered in the markup using cssModule style', () => {
-    expect(ReactDOM.findDOMNode(cssModuleComponent).name).to.be.undefined
+    beforeEach(() => {
+      const cssModule = {
+        fa: 'fa_1',
+        'fa-border': 'fa-border_1',
+        'fa-flip-vertical': 'fa-flip-vertical_1',
+        'fa-fw': 'fa-fw_1',
+        'fa-inverse': 'fa-inverse_1',
+        'fa-lg': 'fa-lg_1',
+        'fa-rocket': 'fa-rocket_1',
+        'fa-pulse': 'fa-pulse_1',
+        'fa-rotate-180': 'fa-rotate-180_1',
+        'fa-spin': 'fa-spin_1',
+        'fa-stack-1x': 'fa-stack-1x_1',
+      }
+
+      cssModuleComponent = ReactDOM.render(
+        <FontAwesome {...props} cssModule={cssModule} />,
+          document.getElementById('root')
+      )
+      cssModuleClasses = ReactDOM.findDOMNode(cssModuleComponent).className.split(' ')
+    })
+
+    it('correct class names get set using cssModule style', () => {
+      const expectedClasses = [
+        'fa_1',
+        'fa-border_1',
+        'fa-flip-vertical_1',
+        'fa-fw_1',
+        'fa-inverse_1',
+        'fa-lg_1',
+        'fa-rocket_1',
+        'fa-pulse_1',
+        'fa-rotate-180_1',
+        'fa-spin_1',
+        'fa-stack-1x_1',
+        'my-custom-class',
+      ]
+      expectedClasses.forEach((className) => {
+        expect(cssModuleClasses).to.include(className)
+      })
+    })
+
+    it('the "name" and "cssModule" prop is not rendered in the markup using cssModule style', () => {
+      expect(ReactDOM.findDOMNode(cssModuleComponent).name).to.be.undefined
+      expect(ReactDOM.findDOMNode(cssModuleComponent).cssModule).to.be.undefined
+    })
   })
 
 })

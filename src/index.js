@@ -42,6 +42,7 @@ export default React.createClass({
     let {
       border,
       cssModule,
+      className,
       fixedWidth,
       flip,
       inverse,
@@ -54,96 +55,41 @@ export default React.createClass({
       ...props,
     } = this.props
 
-    let className = ''
+    let classNames = []
+
     if (cssModule) {
-      className = `${cssModule.fa} ${cssModule['fa-' + name]}`
-
-      if (size) {
-        className += ` ${cssModule['fa-' + size]}`
-      }
-
-      if (spin) {
-        className += ` ${cssModule['fa-spin']}`
-      }
-
-      if (pulse) {
-        className += ` ${cssModule['fa-pulse']}`
-      }
-
-      if (border) {
-        className += ` ${cssModule['fa-border']}`
-      }
-
-      if (fixedWidth) {
-        className += ` ${cssModule['fa-fw']}`
-      }
-
-      if (inverse) {
-        className += ` ${cssModule['fa-inverse']}`
-      }
-
-      if (flip) {
-        className += ` ${cssModule['fa-flip-' + flip]}`
-      }
-
-      if (rotate) {
-        className += ` ${cssModule['fa-rotate-' + rotate]}`
-      }
-
-      if (stack) {
-        className += ` ${cssModule['fa-stack-' + stack]}`
-      }
-
-      if (this.props.className) {
-        className += ' ' + this.props.className
-      }
+      classNames.push(cssModule['fa'])
+      classNames.push(cssModule['fa-' + name])
+      size && classNames.push(cssModule['fa-' + size])
+      spin && classNames.push(cssModule['fa-spin'])
+      pulse && classNames.push(cssModule['fa-pulse'])
+      border && classNames.push(cssModule['fa-border'])
+      fixedWidth && classNames.push(cssModule['fa-fw'])
+      inverse && classNames.push(cssModule['fa-inverse'])
+      flip && classNames.push(cssModule['fa-flip-' + flip])
+      rotate && classNames.push(cssModule['fa-rotate-' + rotate])
+      stack && classNames.push(cssModule['fa-stack-' + stack])
     } else {
-      className = 'fa fa-' + name
-
-      if (size) {
-        className += ' fa-' + size
-      }
-
-      if (spin) {
-        className += ' fa-spin'
-      }
-
-      if (pulse) {
-        className += ' fa-pulse'
-      }
-
-      if (border) {
-        className += ' fa-border'
-      }
-
-      if (fixedWidth) {
-        className += ' fa-fw'
-      }
-
-      if (inverse) {
-        className += ' fa-inverse'
-      }
-
-      if (flip) {
-        className += ' fa-flip-' + flip
-      }
-
-      if (rotate) {
-        className += ' fa-rotate-' + rotate
-      }
-
-      if (stack) {
-        className += ' fa-stack-' + stack
-      }
-
-      if (this.props.className) {
-        className += ' ' + this.props.className
-      }
+      classNames.push('fa')
+      classNames.push('fa-' + name)
+      size && classNames.push('fa-' + size)
+      spin && classNames.push('fa-spin')
+      pulse && classNames.push('fa-pulse')
+      border && classNames.push('fa-border')
+      fixedWidth && classNames.push('fa-fw')
+      inverse && classNames.push('fa-inverse')
+      flip && classNames.push('fa-flip-' + flip)
+      rotate && classNames.push('fa-rotate-' + rotate)
+      stack && classNames.push('fa-stack-' + stack)
     }
+
+    // Add any custom class names at the end.
+    className && classNames.push(className)
+
     return (
       <span
         {...props}
-        className={className}
+        className={classNames.join(' ')}
       />
     )
   },
