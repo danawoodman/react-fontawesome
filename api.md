@@ -8,6 +8,7 @@ A React component for the font-awesome icon library.
 | --- | --- | --- | --- |
 | [border] | <code>Boolean</code> | <code>false</code> | Whether or not to show a border radius |
 | [className] | <code>String</code> |  | An extra set of CSS classes to add to the component |
+| [cssModule] | <code>Object</code> |  | Option to pass FontAwesome CSS as a module |
 | [fixedWidth] | <code>Boolean</code> | <code>false</code> | Make buttons fixed width |
 | [flip] | <code>String</code> | <code>false</code> | Flip the icon's orientation. |
 | [inverse] | <code>Boolean</code> | <code>false</code> | the icon's color |
