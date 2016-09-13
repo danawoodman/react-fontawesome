@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0
+
+- Add CSS module support (#21, thanks @callumsmits!)
+- Simplify CSS tag creation code
+- Cleanup test suite
+
 ## v1.1.0
 
 - Remove `prepublish` step so builds work on Windows
