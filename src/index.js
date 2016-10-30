@@ -87,7 +87,7 @@ export default React.createClass({
     className && classNames.push(className)
 
     return (
-      <span
+      <i
         {...props}
         className={classNames.join(' ')}
       />
