@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.0
+
+- Merged #28: Add ability to change base tag (default is still `<span>`), thanks @lucaskatayama
+- Cleaned up tests a bit
+- Version control lib directory since `prepublish` script is gone.
+
 ## v1.2.0
 
 - Add CSS module support (#21, thanks @callumsmits!)
