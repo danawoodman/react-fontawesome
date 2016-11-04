@@ -106,6 +106,30 @@ describe('react-fontawesome', () => {
       expect(ReactDOM.findDOMNode(cssModuleComponent).name).to.be.undefined
       expect(ReactDOM.findDOMNode(cssModuleComponent).cssModule).to.be.undefined
     })
+
   })
+  context('Using tag prop', () => {
+  it('should render span tag if tag prop is not specified', () => {
+    props = {
+      name: 'rocket'
+    }
+    component = ReactDOM.render(
+      <FontAwesome {...props}/>, document.getElementById('root'))
+    classes = ReactDOM.findDOMNode(component).className.split(' ')
+    expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('SPAN');
+  })
+
+  it('should render tag specified in tag prop', () => {
+    //http://stackoverflow.com/a/26872245/1181036
+    require('fbjs/lib/ExecutionEnvironment').canUseDOM = true
+    props = {
+      tag: 'i',
+      name: 'rocket'
+    }
+    component = ReactDOM.render(
+      <FontAwesome {...props}/>, document.getElementById('root'))
+    expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('I');
+  })
+})
 
 })
