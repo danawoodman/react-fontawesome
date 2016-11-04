@@ -24,6 +24,7 @@ export default React.createClass({
   displayName: 'FontAwesome',
 
   propTypes: {
+    tag: React.PropTypes.string,
     border: React.PropTypes.bool,
     className: React.PropTypes.string,
     cssModule: React.PropTypes.object,
@@ -52,6 +53,7 @@ export default React.createClass({
       size,
       spin,
       stack,
+      tag = 'span',
       ...props,
     } = this.props
 
@@ -85,12 +87,6 @@ export default React.createClass({
 
     // Add any custom class names at the end.
     className && classNames.push(className)
-
-    return (
-      <span
-        {...props}
-        className={classNames.join(' ')}
-      />
-    )
+    return React.createElement(tag, { ...props, className: classNames.join(' ') })
   },
 })
