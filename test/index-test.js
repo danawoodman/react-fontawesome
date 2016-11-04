@@ -120,15 +120,13 @@ describe('react-fontawesome', () => {
   })
 
   it('should render tag specified in tag prop', () => {
-    //http://stackoverflow.com/a/26872245/1181036
-    require('fbjs/lib/ExecutionEnvironment').canUseDOM = true
     props = {
       tag: 'i',
       name: 'rocket'
     }
     component = ReactDOM.render(
-      <FontAwesome {...props}/>, document.getElementById('root'))
-    expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('I');
+      <div><FontAwesome {...props}/></div>, document.getElementById('root'))
+    expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal('I');
   })
 })
 
