@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.1
+
+- Add documentation for overriding tag name
+
 ## v1.3.0
 
 - Merged #28: Add ability to change base tag (default is still `<span>`), thanks @lucaskatayama

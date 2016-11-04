@@ -16,6 +16,7 @@ import React from 'react'
  * @param {String} [size] The icon scaling size
  * @param {Boolean} [spin=false] Spin the icon
  * @param {String} [stack] Stack an icon on top of another
+ * @param {String} [tag=span] The HTML tag to use as a string (eg 'i' or 'em')
  * @module FontAwesome
  * @type {ReactClass}
  */
@@ -24,7 +25,6 @@ export default React.createClass({
   displayName: 'FontAwesome',
 
   propTypes: {
-    tag: React.PropTypes.string,
     border: React.PropTypes.bool,
     className: React.PropTypes.string,
     cssModule: React.PropTypes.object,
@@ -37,6 +37,7 @@ export default React.createClass({
     size: React.PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
     spin: React.PropTypes.bool,
     stack: React.PropTypes.oneOf([ '1x', '2x' ]),
+    tag: React.PropTypes.string,
   },
 
   render() {
