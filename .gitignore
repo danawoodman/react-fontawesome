@@ -4,4 +4,3 @@ node_modules/
 *.log
 .yo-rc.json
 npm-debug.log*
-lib

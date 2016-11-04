@@ -116,7 +116,7 @@ describe('react-fontawesome', () => {
         <FontAwesome {...props}/>,
         document.getElementById('root')
       )
-      expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('SPAN');
+      expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('SPAN')
     })
 
     it('should render tag specified in tag prop', () => {
@@ -125,7 +125,7 @@ describe('react-fontawesome', () => {
         <div><FontAwesome {...props}/></div>,
         document.getElementById('root')
       )
-      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal('I');
+      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal('I')
     })
 
   })
