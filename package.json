@@ -15,7 +15,7 @@
     "url": "https://github.com/danawoodman/react-fontawesome/issues"
   },
   "main": "lib/index.js",
-  "style": "lib/react-fontawesome.css',
+  "style": "lib/react-fontawesome.css",
   "scripts": {
     "build": "babel $npm_package_config_entry --out-dir $npm_package_config_output",
     "dist": "npm run lint && npm run build && npm test && npm run docs",
