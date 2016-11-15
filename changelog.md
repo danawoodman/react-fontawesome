@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0
+
+- Merged #30: Add support for aria screen reader support, thanks @Phyks
+
 ## v1.3.1
 
 - Add documentation for overriding tag name
