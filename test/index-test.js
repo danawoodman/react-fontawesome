@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
 import FontAwesome from '../src'
-import styles from '../src/react-fontawesome.css'
+import { srOnlyStyle } from '../src'
 
 describe('react-fontawesome', () => {
   let component
@@ -157,7 +157,9 @@ describe('react-fontawesome', () => {
       expect(children.length).to.be.equal(1)
       expect(children[0].tagName).to.be.equal('SPAN')
       expect(children[0].textContent).to.be.equal('foobar')
-      expect(children[0].className).to.be.equal(styles['sr-only'])
+      Object.keys(srOnlyStyle).forEach(key =>
+        expect(children[0].style[key]).to.be.equal(srOnlyStyle[key])
+      )
     })
   })
 

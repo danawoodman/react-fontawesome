@@ -1,5 +1,16 @@
 import React from 'react'
-import styles from './react-fontawesome.css'
+
+export const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: '0px',
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0px, 0px, 0px, 0px)',
+  border: '0px',
+}
+
 
 /**
  * A React component for the font-awesome icon library.
@@ -94,7 +105,7 @@ export default React.createClass({
     className && classNames.push(className)
     return React.createElement(
       tag, { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel ? React.createElement('span', { className: styles['sr-only'] }, ariaLabel) : null
+      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null
     )
   },
 })
