@@ -6,6 +6,7 @@ A React component for the font-awesome icon library.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
+| [ariaLabel] | <code>String</code> |  | An extra accessibility label to put on the icon |
 | [border] | <code>Boolean</code> | <code>false</code> | Whether or not to show a border radius |
 | [className] | <code>String</code> |  | An extra set of CSS classes to add to the component |
 | [cssModule] | <code>Object</code> |  | Option to pass FontAwesome CSS as a module |

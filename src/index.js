@@ -1,9 +1,22 @@
 import React from 'react'
 
+export const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: '0px',
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0px, 0px, 0px, 0px)',
+  border: '0px',
+}
+
+
 /**
  * A React component for the font-awesome icon library.
  *
  *
+ * @param {String} [ariaLabel] An extra accessibility label to put on the icon
  * @param {Boolean} [border=false] Whether or not to show a border radius
  * @param {String} [className] An extra set of CSS classes to add to the component
  * @param {Object} [cssModule] Option to pass FontAwesome CSS as a module
@@ -25,6 +38,7 @@ export default React.createClass({
   displayName: 'FontAwesome',
 
   propTypes: {
+    ariaLabel: React.PropTypes.string,
     border: React.PropTypes.bool,
     className: React.PropTypes.string,
     cssModule: React.PropTypes.object,
@@ -55,6 +69,7 @@ export default React.createClass({
       spin,
       stack,
       tag = 'span',
+      ariaLabel,
       ...props,
     } = this.props
 
@@ -88,6 +103,9 @@ export default React.createClass({
 
     // Add any custom class names at the end.
     className && classNames.push(className)
-    return React.createElement(tag, { ...props, className: classNames.join(' ') })
+    return React.createElement(
+      tag, { ...props, 'aria-hidden': true, className: classNames.join(' ') },
+      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null
+    )
   },
 })
