@@ -1,5 +1,9 @@
 # Changelog
 
+## v.1.5.0
+
+- Move screenreader styles to separate file to fix build issues (see #32)
+
 ## v1.4.0
 
 - Merged #30: Add support for aria screen reader support, thanks @Phyks
