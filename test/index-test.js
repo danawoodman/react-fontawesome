@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
 import FontAwesome from '../src'
-import { srOnlyStyle } from '../src'
+import srOnlyStyle from '../src/screen-reader-styles'
 
 describe('react-fontawesome', () => {
   let component
