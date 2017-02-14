@@ -3,6 +3,6 @@ const ReactDOM = require('react-dom')
 const FA = require('react-fontawesome')
 
 ReactDOM.render(
-  <FA name='twitter' />,
+  <FA name='twitter' spin />,
   document.getElementById('root')
 )
