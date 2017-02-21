@@ -59,6 +59,7 @@ export default React.createClass({
       stack,
       tag = 'span',
       ariaLabel,
+      children,
       ...props,
     } = this.props
 
@@ -94,7 +95,8 @@ export default React.createClass({
     className && classNames.push(className)
     return React.createElement(
       tag, { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null
+      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null,
+      children
     )
   },
 })
