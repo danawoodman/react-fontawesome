@@ -26,7 +26,7 @@ import srOnlyStyle from './screen-reader-styles'
 class FontAwesome extends React.Component{
   constructor(){
     super()
-    this.displayName = 'FontAwesome';
+    this.displayName = 'FontAwesome'
   }
 
   render() {
