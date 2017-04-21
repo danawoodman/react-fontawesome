@@ -5,6 +5,7 @@
 - Use prettier-eslint to auto-format code
 - Changed syntax to use ES6 class and package prop-types since the are both deprecated #41
 - Use prop-types package instead of deprecated React.PropTypes #40
+- Upgrade to node v7.8.0
 - Some cleanup
 
 ## v.1.5.0
