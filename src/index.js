@@ -45,6 +45,7 @@ class FontAwesome extends React.Component{
       stack,
       tag = 'span',
       ariaLabel,
+      children,
       ...props,
     } = this.props
 
@@ -80,7 +81,8 @@ class FontAwesome extends React.Component{
     className && classNames.push(className)
     return React.createElement(
       tag, { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null
+      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null,
+      children
     )
   }
 }
