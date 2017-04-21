@@ -14,10 +14,10 @@ A React component for the font-awesome icon library.
 | [flip] | <code>String</code> | <code>false</code> | Flip the icon's orientation. |
 | [inverse] | <code>Boolean</code> | <code>false</code> | the icon's color |
 | name | <code>String</code> |  | Name of the icon to use |
-| [pulse] | <code>Boolean</code> | <code>false</code> | Rotate icon with 8 steps (rather than smoothly) |
+| [pulse] | <code>Boolean</code> | <code>false</code> | Rotate icon with 8 steps, rather than smoothly |
 | [rotate] | <code>Number</code> |  | The degress to rotate the icon by |
 | [size] | <code>String</code> |  | The icon scaling size |
 | [spin] | <code>Boolean</code> | <code>false</code> | Spin the icon |
 | [stack] | <code>String</code> |  | Stack an icon on top of another |
-| [tag] | <code>String</code> | <code>span</code> | The HTML tag to use as a string (eg 'i' or 'em') |
+| [tag] | <code>String</code> | <code>span</code> | The HTML tag to use as a string, eg 'i' or 'em' |
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## v.1.6.0
+
+- Use prettier-eslint to auto-format code
+- Changed syntax to use ES6 class and package prop-types since the are both deprecated #41
+- Use prop-types package instead of deprecated React.PropTypes #40
+- Some cleanup
+
 ## v.1.5.0
 
 - Move screenreader styles to separate file to fix build issues (see #32)
