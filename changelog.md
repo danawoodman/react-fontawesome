@@ -1,5 +1,10 @@
 # Changelog
 
+## v.1.6.1
+
+- Remove support for iojs
+- Add test for node 6 and 7
+
 ## v.1.6.0
 
 - Use prettier-eslint to auto-format code
