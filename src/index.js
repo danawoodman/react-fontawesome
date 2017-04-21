@@ -23,26 +23,11 @@ import srOnlyStyle from './screen-reader-styles'
  * @module FontAwesome
  * @type {ReactClass}
  */
-export default React.createClass({
-
-  displayName: 'FontAwesome',
-
-  propTypes: {
-    ariaLabel: PropTypes.string,
-    border: PropTypes.bool,
-    className: PropTypes.string,
-    cssModule: PropTypes.object,
-    fixedWidth: PropTypes.bool,
-    flip: PropTypes.oneOf([ 'horizontal', 'vertical' ]),
-    inverse: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    pulse: PropTypes.bool,
-    rotate: PropTypes.oneOf([ 90, 180, 270 ]),
-    size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
-    spin: PropTypes.bool,
-    stack: PropTypes.oneOf([ '1x', '2x' ]),
-    tag: PropTypes.string,
-  },
+class FontAwesome extends React.Component{
+  constructor(){
+    super()
+    this.displayName = 'FontAwesome'
+  }
 
   render() {
     let {
@@ -97,5 +82,26 @@ export default React.createClass({
       tag, { ...props, 'aria-hidden': true, className: classNames.join(' ') },
       ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null
     )
-  },
-})
+  }
+}
+
+
+FontAwesome.propTypes = {
+  ariaLabel: PropTypes.string,
+  border: PropTypes.bool,
+  className: PropTypes.string,
+  cssModule: PropTypes.object,
+  fixedWidth: PropTypes.bool,
+  flip: PropTypes.oneOf([ 'horizontal', 'vertical' ]),
+  inverse: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  pulse: PropTypes.bool,
+  rotate: PropTypes.oneOf([ 90, 180, 270 ]),
+  size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
+  spin: PropTypes.bool,
+  stack: PropTypes.oneOf([ '1x', '2x' ]),
+  tag: PropTypes.string,
+}
+
+
+export default FontAwesome

@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 const config = {
   devtool: 'eval',
   entry:  [
