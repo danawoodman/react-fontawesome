@@ -15,6 +15,7 @@
 npm install --save react-fontawesome
 ```
 
+*Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to [CDN versions](https://www.bootstrapcdn.com/fontawesome/).*
 
 ## Usage
 
@@ -33,7 +34,6 @@ React.render(<FontAwesome name='rocket' />, document.body);
 - Supports all Font Awesome modifiers (see [API](#API) below).
 - Add your own `className`s, styles and other props (all additional props are passed directly to the component).
 
-*Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to [CDN versions](https://www.bootstrapcdn.com/fontawesome/).*
 
 
 ## Examples
