@@ -14,7 +14,7 @@
     "build": "babel src --out-dir lib",
     "dist": "npm run format && npm run build && npm test && npm run docs",
     "docs": "jsdoc2md lib/index.js > api.md",
-    "format": "prettier-eslint '{src,test}/**/*.js' --prettier.single-quote --prettier.no-semi es5 --write",
+    "format": "prettier-eslint '{src,test}/**/*.js' --single-quote --no-semi es5 --write",
     "test": "mocha",
     "watch": "npm run watch-build & npm run watch-test",
     "watch-build": "npm run build -- --watch",

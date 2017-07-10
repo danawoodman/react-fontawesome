@@ -17,7 +17,7 @@ import srOnlyStyle from './screen-reader-styles'
  * @param {Number} [rotate] The degress to rotate the icon by
  * @param {String} [size] The icon scaling size
  * @param {Boolean} [spin=false] Spin the icon
- * @param {String} [stack] Stack an icon on top of another
+ * @param {String} [stack] Stack an icon on top of another. Arguments specify z-index such as '1x' See documentation for example http://fontawesome.io/examples/#stacked
  * @param {String} [tag=span] The HTML tag to use as a string, eg 'i' or 'em'
  * @module FontAwesome
  * @type {ReactClass}
@@ -80,7 +80,9 @@ class FontAwesome extends React.Component {
     return React.createElement(
       tag,
       { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null,
+      ariaLabel
+        ? React.createElement('span', { style: srOnlyStyle }, ariaLabel)
+        : null
     )
   }
 }
@@ -91,14 +93,14 @@ FontAwesome.propTypes = {
   className: PropTypes.string,
   cssModule: PropTypes.object,
   fixedWidth: PropTypes.bool,
-  flip: PropTypes.oneOf(['horizontal', 'vertical']),
+  flip: PropTypes.oneOf([ 'horizontal', 'vertical' ]),
   inverse: PropTypes.bool,
   name: PropTypes.string.isRequired,
   pulse: PropTypes.bool,
-  rotate: PropTypes.oneOf([90, 180, 270]),
-  size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
+  rotate: PropTypes.oneOf([ 90, 180, 270 ]),
+  size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
   spin: PropTypes.bool,
-  stack: PropTypes.oneOf(['1x', '2x']),
+  stack: PropTypes.oneOf([ '1x', '2x' ]),
   tag: PropTypes.string,
 }
 

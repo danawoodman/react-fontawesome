@@ -18,6 +18,6 @@ A React component for the font-awesome icon library.
 | [rotate] | <code>Number</code> |  | The degress to rotate the icon by |
 | [size] | <code>String</code> |  | The icon scaling size |
 | [spin] | <code>Boolean</code> | <code>false</code> | Spin the icon |
-| [stack] | <code>String</code> |  | Stack an icon on top of another |
+| [stack] | <code>String</code> |  | Stack an icon on top of another. Arguments specify z-index such as '1x' See documentation for example http://fontawesome.io/examples/#stacked |
 | [tag] | <code>String</code> | <code>span</code> | The HTML tag to use as a string, eg 'i' or 'em' |
 
