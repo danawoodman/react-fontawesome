@@ -21,3 +21,15 @@ A React component for the font-awesome icon library.
 | [stack] | <code>String</code> |  | Stack an icon on top of another. Arguments specify z-index such as '1x' See documentation for example http://fontawesome.io/examples/#stacked |
 | [tag] | <code>String</code> | <code>span</code> | The HTML tag to use as a string, eg 'i' or 'em' |
 
+<a name="module_FontAwesome..StackedIcons"></a>
+
+### FontAwesome~StackedIcons
+The parent component for stacked icons.
+
+**Kind**: inner property of <code>[FontAwesome](#module_FontAwesome)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [size] | <code>string</code> | scaling size |
+| [className] | <code>String</code> | An extra set of CSS classes to add to the component |
+

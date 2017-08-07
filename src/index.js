@@ -80,9 +80,7 @@ class FontAwesome extends React.Component {
     return React.createElement(
       tag,
       { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel
-        ? React.createElement('span', { style: srOnlyStyle }, ariaLabel)
-        : null
+      ariaLabel ? React.createElement('span', { style: srOnlyStyle }, ariaLabel) : null,
     )
   }
 }
@@ -93,14 +91,14 @@ FontAwesome.propTypes = {
   className: PropTypes.string,
   cssModule: PropTypes.object,
   fixedWidth: PropTypes.bool,
-  flip: PropTypes.oneOf([ 'horizontal', 'vertical' ]),
+  flip: PropTypes.oneOf(['horizontal', 'vertical']),
   inverse: PropTypes.bool,
   name: PropTypes.string.isRequired,
   pulse: PropTypes.bool,
-  rotate: PropTypes.oneOf([ 90, 180, 270 ]),
-  size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
+  rotate: PropTypes.oneOf([90, 180, 270]),
+  size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
   spin: PropTypes.bool,
-  stack: PropTypes.oneOf([ '1x', '2x' ]),
+  stack: PropTypes.oneOf(['1x', '2x']),
   tag: PropTypes.string,
 }
 
@@ -114,13 +112,7 @@ export default FontAwesome
  */
 export class StackedIcons extends React.Component {
   render() {
-    const {
-      children,
-      size,
-      className,
-      cssModule,
-      ...props
-    } = this.props
+    const { children, size, className, cssModule, ...props } = this.props
 
     const classNames = []
 
@@ -134,16 +126,12 @@ export class StackedIcons extends React.Component {
 
     className && classNames.push(className)
 
-    return React.createElement(
-      'span',
-      { ...props, className: classNames.join(' ') },
-      children
-    )
+    return React.createElement('span', { ...props, className: classNames.join(' ') }, children)
   }
 }
 
 StackedIcons.propTypes = {
   className: PropTypes.string,
   cssModule: PropTypes.object,
-  size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
+  size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
 }

@@ -29,10 +29,7 @@ describe('react-fontawesome', () => {
       rotate: 180,
       stack: '1x',
     }
-    component = ReactDOM.render(
-      <FontAwesome {...props} />,
-      document.getElementById('root')
-    )
+    component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
     classes = ReactDOM.findDOMNode(component).className.split(' ')
     ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
   })
@@ -70,13 +67,13 @@ describe('react-fontawesome', () => {
           <FontAwesome name="circle" stack="2x" />
           <FontAwesome name="flag" stack="1x" inverse />
         </StackedIcons>,
-        document.getElementById('root')
+        document.getElementById('root'),
       )
 
       const domNode = ReactDOM.findDOMNode(component)
       expect(domNode.tagName).to.be.equal('SPAN')
 
-      const expectedClasses = [ 'fa-stack', 'fa-lg', 'my-custom-class' ]
+      const expectedClasses = ['fa-stack', 'fa-lg', 'my-custom-class']
       classes = domNode.className.split(' ')
       expectedClasses.forEach(c => expect(classes).to.include(c))
 
@@ -107,11 +104,9 @@ describe('react-fontawesome', () => {
 
       cssModuleComponent = ReactDOM.render(
         <FontAwesome {...props} cssModule={cssModule} />,
-        document.getElementById('root')
+        document.getElementById('root'),
       )
-      cssModuleClasses = ReactDOM.findDOMNode(
-        cssModuleComponent
-      ).className.split(' ')
+      cssModuleClasses = ReactDOM.findDOMNode(cssModuleComponent).className.split(' ')
     })
 
     it('correct class names get set using cssModule style', () => {
@@ -151,16 +146,11 @@ describe('react-fontawesome', () => {
             <FontAwesome name="circle" stack="2x" />
             <FontAwesome name="flag" stack="1x" inverse />
           </StackedIcons>,
-          document.getElementById('root')
+          document.getElementById('root'),
         )
-        cssModuleClasses = ReactDOM.findDOMNode(
-          cssModuleComponent
-        ).className.split(' ')
+        cssModuleClasses = ReactDOM.findDOMNode(cssModuleComponent).className.split(' ')
 
-        const expectedClasses = [
-          'fa-stack_1',
-          'fa-lg_1',
-        ]
+        const expectedClasses = ['fa-stack_1', 'fa-lg_1']
         expectedClasses.forEach(c => expect(cssModuleClasses).to.include(c))
       })
     })
@@ -168,10 +158,7 @@ describe('react-fontawesome', () => {
   context('Using tag prop', () => {
     it('should render span tag if tag prop is not specified', () => {
       props = { name: 'rocket' }
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
       expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('SPAN')
     })
 
@@ -181,36 +168,26 @@ describe('react-fontawesome', () => {
         <div>
           <FontAwesome {...props} />
         </div>,
-        document.getElementById('root')
+        document.getElementById('root'),
       )
-      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal(
-        'I'
-      )
+      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal('I')
     })
   })
   context('Using ariaLabel prop', () => {
     it('should not render sub span tag if ariaLabel prop is not specified', () => {
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
       expect(ReactDOM.findDOMNode(component).children.length).to.be.equal(0)
     })
 
     it('should render sub span tag if ariaLabel prop is specified', () => {
       props = { ariaLabel: 'foobar', name: 'rocket' }
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
 
       let children = ReactDOM.findDOMNode(component).children
       expect(children.length).to.be.equal(1)
       expect(children[0].tagName).to.be.equal('SPAN')
       expect(children[0].textContent).to.be.equal('foobar')
-      Object.keys(srOnlyStyle).forEach(key =>
-        expect(children[0].style[key]).to.be.equal(srOnlyStyle[key])
-      )
+      Object.keys(srOnlyStyle).forEach(key => expect(children[0].style[key]).to.be.equal(srOnlyStyle[key]))
     })
   })
 })
