@@ -105,3 +105,45 @@ FontAwesome.propTypes = {
 }
 
 export default FontAwesome
+
+/**
+ * The parent component for stacked icons.
+ *
+ * @param {string} [size] scaling size
+ * @param {String} [className] An extra set of CSS classes to add to the component
+ */
+export class StackedIcons extends React.Component {
+  render() {
+    const {
+      children,
+      size,
+      className,
+      cssModule,
+      ...props
+    } = this.props
+
+    const classNames = []
+
+    if (cssModule) {
+      classNames.push(cssModule['fa-stack'])
+      size && classNames.push(cssModule[`fa-${size}`])
+    } else {
+      classNames.push('fa-stack')
+      size && classNames.push(`fa-${size}`)
+    }
+
+    className && classNames.push(className)
+
+    return React.createElement(
+      'span',
+      { ...props, className: classNames.join(' ') },
+      children
+    )
+  }
+}
+
+StackedIcons.propTypes = {
+  className: PropTypes.string,
+  cssModule: PropTypes.object,
+  size: PropTypes.oneOf([ 'lg', '2x', '3x', '4x', '5x' ]),
+}

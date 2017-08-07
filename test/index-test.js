@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
-import FontAwesome from '../src'
+import FontAwesome, { StackedIcons } from '../src'
 import srOnlyStyle from '../src/screen-reader-styles'
 
 describe('react-fontawesome', () => {
@@ -63,6 +63,29 @@ describe('react-fontawesome', () => {
     expect(ReactDOM.findDOMNode(component).name).to.be.undefined
   })
 
+  context('StackedIcons', () => {
+    it('should set classNames properly', () => {
+      component = ReactDOM.render(
+        <StackedIcons size="lg" className="my-custom-class">
+          <FontAwesome name="circle" stack="2x" />
+          <FontAwesome name="flag" stack="1x" inverse />
+        </StackedIcons>,
+        document.getElementById('root')
+      )
+
+      const domNode = ReactDOM.findDOMNode(component)
+      expect(domNode.tagName).to.be.equal('SPAN')
+
+      const expectedClasses = [ 'fa-stack', 'fa-lg', 'my-custom-class' ]
+      classes = domNode.className.split(' ')
+      expectedClasses.forEach(c => expect(classes).to.include(c))
+
+      expect(domNode.childNodes.length).to.equal(2)
+      expect(domNode.childNodes[0].className.split(' ')).to.include('fa-stack-2x')
+      expect(domNode.childNodes[1].className.split(' ')).to.include('fa-stack-1x')
+    })
+  })
+
   context('CSS module support', () => {
     let cssModuleComponent
     let cssModuleClasses
@@ -114,6 +137,32 @@ describe('react-fontawesome', () => {
     it('the "name" and "cssModule" prop is not rendered in the markup using cssModule style', () => {
       expect(ReactDOM.findDOMNode(cssModuleComponent).name).to.be.undefined
       expect(ReactDOM.findDOMNode(cssModuleComponent).cssModule).to.be.undefined
+    })
+
+    context('StackedIcons', () => {
+      it('should set cssModule styles', () => {
+        const cssModule1 = {
+          'fa-stack': 'fa-stack_1',
+          'fa-lg': 'fa-lg_1',
+        }
+
+        cssModuleComponent = ReactDOM.render(
+          <StackedIcons size="lg" cssModule={cssModule1}>
+            <FontAwesome name="circle" stack="2x" />
+            <FontAwesome name="flag" stack="1x" inverse />
+          </StackedIcons>,
+          document.getElementById('root')
+        )
+        cssModuleClasses = ReactDOM.findDOMNode(
+          cssModuleComponent
+        ).className.split(' ')
+
+        const expectedClasses = [
+          'fa-stack_1',
+          'fa-lg_1',
+        ]
+        expectedClasses.forEach(c => expect(cssModuleClasses).to.include(c))
+      })
     })
   })
   context('Using tag prop', () => {

@@ -1,6 +1,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const FA = require('react-fontawesome')
+const StackedIcons = FA.StackedIcons
 
 // Spinning
 ReactDOM.render(
@@ -10,9 +11,9 @@ ReactDOM.render(
 
 // Stack
 ReactDOM.render(
-  <span className='fa-stack fa-lg'>
+  <StackedIcons size='lg'>
     <FA name='square-o' stack='2x' />
     <FA name='twitter' stack='1x' />
-  </span>,
+  </StackedIcons>,
   document.getElementById('stacked')
 )
