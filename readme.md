@@ -32,12 +32,14 @@ React.render(<FontAwesome name='rocket' />, document.body);
 - No dependencies (other than React)
 - Simple API that mirrors Font Awesome's class names.
 - Supports all Font Awesome modifiers (see [API](#API) below).
+- Make use of Css Modules
 - Add your own `className`s, styles and other props (all additional props are passed directly to the component).
 
 
 
 ## Examples
 
+**Regular usage**
 ```js
 var React = require('react');
 var FontAwesome = require('react-fontawesome');
@@ -57,6 +59,33 @@ var MyComponent = React.createClass({
 });
 ```
 
+**With the use of CSS Modules**
+```js
+import React from 'react';
+import FontAwesome from 'react-fontawesome';
+import faStyles from 'font-awesome/css/font-awesome.css';
+
+var MyComponent = React.createClass({
+  render: function () {
+    return (
+      <FontAwesome
+        className='super-crazy-colors'
+        name='rocket'
+        cssModule={faStyles}
+        size='2x'
+        spin
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      />
+    );
+  }
+});
+```
+
+The above will create output like this:
+
+```
+<span class="font-awesome__fa___2otTb font-awesome__fa-rocket___lfSov font-awesome__super-crazy-colors___3k583"></span>
+```
 
 ## API
 
