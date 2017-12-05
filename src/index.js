@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import srOnlyStyle from './screen-reader-styles'
 
 /**
  * A React component for the font-awesome icon library.
@@ -11,8 +10,8 @@ import srOnlyStyle from './screen-reader-styles'
  * @param {Object} [cssModule] Option to pass FontAwesome CSS as a module
  * @param {Boolean} [fixedWidth=false] Make buttons fixed width
  * @param {String} [flip=false] Flip the icon's orientation.
- * @param {Boolean} [inverse=false]Inverse the icon's color
- * @param {String} name Name of the icon to use
+ * @param {Boolean} [inverse=false] Inverse the icon's color
+ * @param {String} [name] Name of the icon to use
  * @param {Boolean} [pulse=false] Rotate icon with 8 steps, rather than smoothly
  * @param {Number} [rotate] The degress to rotate the icon by
  * @param {String} [size] The icon scaling size
@@ -47,6 +46,9 @@ class FontAwesome extends React.Component {
       ...props
     } = this.props
 
+    const ariaProps = ariaLabel
+      ? { 'aria-label': ariaLabel }
+      : { 'aria-hidden': true }
     const classNames = []
 
     if (cssModule) {
@@ -77,13 +79,11 @@ class FontAwesome extends React.Component {
 
     // Add any custom class names at the end.
     className && classNames.push(className)
-    return React.createElement(
-      tag,
-      { ...props, 'aria-hidden': true, className: classNames.join(' ') },
-      ariaLabel
-        ? React.createElement('span', { style: srOnlyStyle }, ariaLabel)
-        : null
-    )
+    return React.createElement(tag, {
+      ...props,
+      ...ariaProps,
+      className: classNames.join(' '),
+    })
   }
 }
 

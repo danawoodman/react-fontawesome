@@ -1,15 +1,11 @@
-/* eslint no-unused-expressions:0 */
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import jsdom from 'mocha-jsdom'
 import FontAwesome from '../src'
-import srOnlyStyle from '../src/screen-reader-styles'
 
 describe('react-fontawesome', () => {
   let component
   let classes
-  let ariaHidden
   let props
 
   // Use mocha-jsdom.
@@ -34,7 +30,6 @@ describe('react-fontawesome', () => {
       document.getElementById('root')
     )
     classes = ReactDOM.findDOMNode(component).className.split(' ')
-    ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
   })
 
   it('the proper class names should get set', () => {
@@ -53,10 +48,6 @@ describe('react-fontawesome', () => {
       'my-custom-class',
     ]
     expectedClasses.forEach(name => expect(classes).to.include(name))
-  })
-
-  it('aria-hidden get set', () => {
-    expect(ariaHidden).to.equal('true')
   })
 
   it('the "name" prop is not rendered in the markup', () => {
@@ -140,28 +131,29 @@ describe('react-fontawesome', () => {
     })
   })
   context('Using ariaLabel prop', () => {
-    it('should not render sub span tag if ariaLabel prop is not specified', () => {
+    it('should render with ariaHidden attribute if ariaLabel prop is not specified', () => {
       component = ReactDOM.render(
         <FontAwesome {...props} />,
         document.getElementById('root')
       )
-      expect(ReactDOM.findDOMNode(component).children.length).to.be.equal(0)
+
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
+      expect(ariaHidden).to.equal('true')
+      expect(ariaLabel).to.be.null
     })
 
-    it('should render sub span tag if ariaLabel prop is specified', () => {
+    it('should render without ariaHidden attribute if ariaLabel prop is specified', () => {
       props = { ariaLabel: 'foobar', name: 'rocket' }
       component = ReactDOM.render(
         <FontAwesome {...props} />,
         document.getElementById('root')
       )
 
-      let children = ReactDOM.findDOMNode(component).children
-      expect(children.length).to.be.equal(1)
-      expect(children[0].tagName).to.be.equal('SPAN')
-      expect(children[0].textContent).to.be.equal('foobar')
-      Object.keys(srOnlyStyle).forEach(key =>
-        expect(children[0].style[key]).to.be.equal(srOnlyStyle[key])
-      )
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
+      expect(ariaHidden).to.be.null
+      expect(ariaLabel).to.equal(props.ariaLabel)
     })
   })
 })
