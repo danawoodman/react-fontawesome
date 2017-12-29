@@ -33,10 +33,10 @@ If you're using WebPack, you will need to install FontAwesome, import the FontAw
 ## Usage
 
 ```js
-var React = require("react");
-var FontAwesome = require("react-fontawesome");
+var React = require('react')
+var FA = require('react-fontawesome')
 
-React.render(<FontAwesome name="rocket" />, document.body);
+React.render(<FA name="rocket" />, document.body)
 ```
 
 ## Features
@@ -52,8 +52,8 @@ React.render(<FontAwesome name="rocket" />, document.body);
 **Regular usage**
 
 ```js
-var React = require("react");
-var FontAwesome = require("react-fontawesome");
+var React = require('react')
+var FontAwesome = require('react-fontawesome')
 
 var MyComponent = React.createClass({
   render: function() {
@@ -63,19 +63,19 @@ var MyComponent = React.createClass({
         name="rocket"
         size="2x"
         spin
-        style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
       />
-    );
-  }
-});
+    )
+  },
+})
 ```
 
 **With the use of CSS Modules**
 
 ```js
-import React from "react";
-import FontAwesome from "react-fontawesome";
-import faStyles from "font-awesome/css/font-awesome.css";
+import React from 'react'
+import FontAwesome from 'react-fontawesome'
+import faStyles from 'font-awesome/css/font-awesome.css'
 
 var MyComponent = React.createClass({
   render: function() {
@@ -86,11 +86,11 @@ var MyComponent = React.createClass({
         cssModule={faStyles}
         size="2x"
         spin
-        style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
       />
-    );
-  }
-});
+    )
+  },
+})
 ```
 
 The above will create output like this:
