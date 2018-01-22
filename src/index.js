@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import srOnlyStyle from './screen-reader-styles'
+import { formatClassName, getPassthroughProps } from './utils/';
+import FAUL from './FAUL';
+import FALI from './FALI';
 
 /**
  * A React component for the font-awesome icon library.
@@ -29,57 +32,17 @@ class FontAwesome extends React.Component {
   }
 
   render() {
+    const classNames = formatClassName(this.props, 'fa')
     const {
-      border,
-      cssModule,
-      className,
-      fixedWidth,
-      flip,
-      inverse,
-      name,
-      pulse,
-      rotate,
-      size,
-      spin,
-      stack,
       tag = 'span',
       ariaLabel,
-      ...props
-    } = this.props
+      ...leftoverProps
+    } = getPassthroughProps(this.props)
 
-    const classNames = []
 
-    if (cssModule) {
-      classNames.push(cssModule['fa'])
-      classNames.push(cssModule['fa-' + name])
-      size && classNames.push(cssModule['fa-' + size])
-      spin && classNames.push(cssModule['fa-spin'])
-      pulse && classNames.push(cssModule['fa-pulse'])
-      border && classNames.push(cssModule['fa-border'])
-      fixedWidth && classNames.push(cssModule['fa-fw'])
-      inverse && classNames.push(cssModule['fa-inverse'])
-      flip && classNames.push(cssModule['fa-flip-' + flip])
-      rotate && classNames.push(cssModule['fa-rotate-' + rotate])
-      stack && classNames.push(cssModule['fa-stack-' + stack])
-    } else {
-      classNames.push('fa')
-      classNames.push('fa-' + name)
-      size && classNames.push('fa-' + size)
-      spin && classNames.push('fa-spin')
-      pulse && classNames.push('fa-pulse')
-      border && classNames.push('fa-border')
-      fixedWidth && classNames.push('fa-fw')
-      inverse && classNames.push('fa-inverse')
-      flip && classNames.push('fa-flip-' + flip)
-      rotate && classNames.push('fa-rotate-' + rotate)
-      stack && classNames.push('fa-stack-' + stack)
-    }
-
-    // Add any custom class names at the end.
-    className && classNames.push(className)
     return React.createElement(
       tag,
-      { ...props, 'aria-hidden': true, className: classNames.join(' ') },
+      { ...leftoverProps, 'aria-hidden': true, className: classNames.join(' ') },
       ariaLabel
         ? React.createElement('span', { style: srOnlyStyle }, ariaLabel)
         : null
@@ -105,3 +68,5 @@ FontAwesome.propTypes = {
 }
 
 export default FontAwesome
+
+export { FAUL, FALI }
