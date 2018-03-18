@@ -11,32 +11,66 @@
 ## Install
 
 ```bash
-npm install --save react-fontawesome
+$ npm install --save react-fontawesome
 ```
 
-_Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to [CDN versions](https://www.bootstrapcdn.com/fontawesome/)._
+Or, if you prefer to use yarn:
 
-### Using CDN version
+```bash
+$ yarn add react-fontawesome
+```
 
-The fastest way to get started is to import FontAwesome with a link tag in your page's `<head>`:
+### Using Font Awesome CSS
+
+This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those via one of the following methods.
+
+#### Using a CDN
+
+The fastest way to get started is to import a [CDN version](https://www.bootstrapcdn.com/fontawesome/) of Font Awesome via a `<link>` in the html of your page's `<head>` section:
 
 ```html
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 ```
 
-You can change the version number to use whatever version of FontAwesome you'd like.
+You can change the version number to use whatever version of FontAwesome you'd like; refer to the [CDN list](https://www.bootstrapcdn.com/fontawesome/) to pick a version and its checksum (`integrity`).
 
-### Using with Webpack
+#### Using Webpack (create-react-app)
 
-If you're using WebPack, you will need to install FontAwesome, import the FontAwesome Sass/Less, and configure the font path. Please see this [blog post](https://medium.com/@chanonroy/webpack-2-and-font-awesome-icon-importing-59df3364f35c) on how to get Webpack and FontAwesome working together.
+If you're using [Create React App](/facebook/create-react-app), simply install the [font-awesome](https://yarnpkg.com/en/package/font-awesome) node module:
+
+```bash
+$ yarn add font-awesome
+```
+
+Then, add import its CSS to either `src/index.js` or `src/App.js`:
+
+```js
+import "font-awesome/css/font-awesome.css";
+```
+
+#### Using Webpack (without create-react-app)
+
+You will need to install Font Awesome, import its Sass/Less, and configure the font path. Please see this [blog post](https://medium.com/@chanonroy/webpack-2-and-font-awesome-icon-importing-59df3364f35c) on how to get Webpack and FontAwesome working together.
 
 ## Usage
+
+Once everything is installed, you should be able to render icons with:
 
 ```js
 var React = require('react')
 var FA = require('react-fontawesome')
 
 React.render(<FA name="rocket" />, document.body)
+```
+
+If you're using [Create React App](/facebook/create-react-app), you can also do:
+
+```js
+import React from "react";
+import FontAwesome from "react-fontawesome";
+export default () => {
+  return <FontAwesome name="rocket" />;
+};
 ```
 
 ## Features
