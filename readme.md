@@ -36,7 +36,7 @@ You can change the version number to use whatever version of FontAwesome you'd l
 
 #### Using Webpack (create-react-app)
 
-If you're using [Create React App](/facebook/create-react-app), simply install the [font-awesome](https://yarnpkg.com/en/package/font-awesome) node module:
+If you're using [Create React App](https://github.com/facebook/create-react-app), simply install the [font-awesome](https://yarnpkg.com/en/package/font-awesome) node module:
 
 ```bash
 $ yarn add font-awesome
@@ -63,7 +63,7 @@ var FA = require('react-fontawesome')
 React.render(<FA name="rocket" />, document.body)
 ```
 
-If you're using [Create React App](/facebook/create-react-app), you can also do:
+If you're using [Create React App](https://github.com/facebook/create-react-app), you can also do:
 
 ```js
 import React from "react";
