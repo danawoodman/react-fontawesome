@@ -8,13 +8,16 @@
 
 > A React component for the font-awesome icon library.
 
+**If you are using Font Awesome v5+, please use [the official React component!](https://github.com/FortAwesome/react-fontawesome). `react-fontawesome` does not support FontAwesome v5!**
+
 ## Install
 
 ```bash
 npm install --save react-fontawesome
 ```
 
-_Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to [CDN versions](https://www.bootstrapcdn.com/fontawesome/)._
+_**Note:** This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to [CDN versions](https://www.bootstrapcdn.com/fontawesome/)._
+
 
 ### Using CDN version
 
