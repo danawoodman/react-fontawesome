@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/danawoodman/react-fontawesome.git"
   },
-  "bujs": {
+  "bugs": {
     "url": "https://github.com/danawoodman/react-fontawesome/issues"
   },
   "main": "lib/index.js",
