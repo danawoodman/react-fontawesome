@@ -25,10 +25,7 @@ describe('react-fontawesome', () => {
       rotate: 180,
       stack: '1x',
     }
-    component = ReactDOM.render(
-      <FontAwesome {...props} />,
-      document.getElementById('root')
-    )
+    component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
     classes = ReactDOM.findDOMNode(component).className.split(' ')
   })
 
@@ -77,9 +74,7 @@ describe('react-fontawesome', () => {
         <FontAwesome {...props} cssModule={cssModule} />,
         document.getElementById('root')
       )
-      cssModuleClasses = ReactDOM.findDOMNode(
-        cssModuleComponent
-      ).className.split(' ')
+      cssModuleClasses = ReactDOM.findDOMNode(cssModuleComponent).className.split(' ')
     })
 
     it('correct class names get set using cssModule style', () => {
@@ -111,10 +106,7 @@ describe('react-fontawesome', () => {
   context('Using tag prop', () => {
     it('should render span tag if tag prop is not specified', () => {
       props = { name: 'rocket' }
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
       expect(ReactDOM.findDOMNode(component).tagName).to.be.equal('SPAN')
     })
 
@@ -126,42 +118,26 @@ describe('react-fontawesome', () => {
         </div>,
         document.getElementById('root')
       )
-      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal(
-        'I'
-      )
+      expect(ReactDOM.findDOMNode(component).children[0].tagName).to.be.equal('I')
     })
   })
 
   context('Using ariaLabel prop', () => {
     it('should render with ariaHidden attribute if ariaLabel prop is not specified', () => {
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
 
-      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute(
-        'aria-hidden'
-      )
-      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute(
-        'aria-label'
-      )
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
       expect(ariaHidden).to.equal('true')
       expect(ariaLabel).to.be.null
     })
 
     it('should render without ariaHidden attribute if ariaLabel prop is specified', () => {
       props = { ariaLabel: 'foobar', name: 'rocket' }
-      component = ReactDOM.render(
-        <FontAwesome {...props} />,
-        document.getElementById('root')
-      )
+      component = ReactDOM.render(<FontAwesome {...props} />, document.getElementById('root'))
 
-      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute(
-        'aria-hidden'
-      )
-      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute(
-        'aria-label'
-      )
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
       expect(ariaHidden).to.be.null
       expect(ariaLabel).to.equal(props.ariaLabel)
     })

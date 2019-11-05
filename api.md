@@ -12,8 +12,8 @@ A React component for the font-awesome icon library.
 | [cssModule] | <code>Object</code> |  | Option to pass FontAwesome CSS as a module |
 | [fixedWidth] | <code>Boolean</code> | <code>false</code> | Make buttons fixed width |
 | [flip] | <code>String</code> | <code>false</code> | Flip the icon's orientation. |
-| [inverse] | <code>Boolean</code> | <code>false</code> | the icon's color |
-| name | <code>String</code> |  | Name of the icon to use |
+| [inverse] | <code>Boolean</code> | <code>false</code> | Inverse the icon's color |
+| [name] | <code>String</code> |  | Name of the icon to use |
 | [pulse] | <code>Boolean</code> | <code>false</code> | Rotate icon with 8 steps, rather than smoothly |
 | [rotate] | <code>Number</code> |  | The degress to rotate the icon by |
 | [size] | <code>String</code> |  | The icon scaling size |
