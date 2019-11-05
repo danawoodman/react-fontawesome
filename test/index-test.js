@@ -9,7 +9,7 @@ describe('react-fontawesome', () => {
   let props
 
   // Use mocha-jsdom.
-  jsdom({ html: '<div id="root"></div>' })
+  jsdom({ html: '<div id="root"></div>', url: 'http://localhost/' })
 
   beforeEach(() => {
     props = {
@@ -107,6 +107,7 @@ describe('react-fontawesome', () => {
       expect(ReactDOM.findDOMNode(cssModuleComponent).cssModule).to.be.undefined
     })
   })
+
   context('Using tag prop', () => {
     it('should render span tag if tag prop is not specified', () => {
       props = { name: 'rocket' }
@@ -130,6 +131,7 @@ describe('react-fontawesome', () => {
       )
     })
   })
+
   context('Using ariaLabel prop', () => {
     it('should render with ariaHidden attribute if ariaLabel prop is not specified', () => {
       component = ReactDOM.render(
@@ -137,8 +139,12 @@ describe('react-fontawesome', () => {
         document.getElementById('root')
       )
 
-      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
-      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute(
+        'aria-hidden'
+      )
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute(
+        'aria-label'
+      )
       expect(ariaHidden).to.equal('true')
       expect(ariaLabel).to.be.null
     })
@@ -150,8 +156,12 @@ describe('react-fontawesome', () => {
         document.getElementById('root')
       )
 
-      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute('aria-hidden')
-      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute('aria-label')
+      const ariaHidden = ReactDOM.findDOMNode(component).getAttribute(
+        'aria-hidden'
+      )
+      const ariaLabel = ReactDOM.findDOMNode(component).getAttribute(
+        'aria-label'
+      )
       expect(ariaHidden).to.be.null
       expect(ariaLabel).to.equal(props.ariaLabel)
     })
