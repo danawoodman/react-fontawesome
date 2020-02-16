@@ -10,6 +10,8 @@
 
 **If you are using Font Awesome v5+, please use [the official React component!](https://github.com/FortAwesome/react-fontawesome). `react-fontawesome` does not support FontAwesome v5!**
 
+**This project is no longer actively maintained. Please try and use the official component above if you are able!**
+
 ## Install
 
 ```bash
